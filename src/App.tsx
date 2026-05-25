@@ -5,7 +5,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
-//Task 3
+
 const courses = [
   {id: "WD101",
    title: "Web Development",
@@ -30,11 +30,7 @@ const courses = [
  ];
  
 function App() {
- /*Task 2
-  return(
-  <h1>My Courses List With Info</h1>
- );*/
-
+  const [selectedCourse, setselectedCourse] = useState(null);
 
  return (
   <>
@@ -42,7 +38,12 @@ function App() {
   
 <ul>
   {courses.map(course => (
-    <li key={course.id}>
+    <li key={course.id}
+    onClick={() => setselectedCourse(course)}
+    style={{
+      cursor: "pointer",
+      fontWeight: course === selectedCourse ? "bold" : "normal"
+    }}>
       {course.id}-{course.title}
     </li>
   ))}
