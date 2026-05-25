@@ -4,7 +4,7 @@ import Course from './components/Course'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-
+import CourseDetail from "./components/CourseDetail";
 
 const courses = [
   {id: "WD101",
@@ -30,6 +30,7 @@ const courses = [
  ];
  
 function App() {
+  
   const [selectedCourse, setselectedCourse] = useState(null);
 
  return (
@@ -48,8 +49,8 @@ function App() {
     </li>
   ))}
 </ul>
-
-  </>
+    <CourseDetail course={selectedCourse}/>
+</>
  );
 }
 
